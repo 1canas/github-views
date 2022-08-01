@@ -28,13 +28,13 @@ export default function UserInfo (props: { user: string }) {
                     <div>
                         <li>Followers: {userData.followers}</li>
                         <li>Repositories: {userData.public_repos}</li>
-                        <li>Total start earned: --</li>
+                        <li>Total start earned: {userData.stargazers}</li>
                     </div>
 
                     <div>
-                        <li>Total issues: --</li>
-                        <li>Total commits: --</li>
-                        <li>Contribuited to: --</li>
+                        <li>Total issues: {userData.issues}</li>
+                        <li>Total commits: {userData.commits}</li>
+                        <li>:)</li>
                     </div>
                 </List>
             </InfoContainer>
