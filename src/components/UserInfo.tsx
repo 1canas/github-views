@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 // style
 import { InfoWrapper, InfoContainer, Name, Avatar, List, Login, Bio } from "../assets/UserInfo.style"
@@ -6,7 +6,12 @@ import { InfoWrapper, InfoContainer, Name, Avatar, List, Login, Bio } from "../a
 // interface
 import { IUsers } from "../interfaces/IUsers"
 
+// services
 import getUserData from "../services/fetchService"
+
+// icons
+import { FaStar, FaUserAlt, FaInfoCircle } from "react-icons/fa"
+import { GoRepo, GoGitCommit } from "react-icons/go"
 
 export default function UserInfo (props: { user: string }) {
     const [userData, setUserData] = useState<IUsers>()
@@ -26,14 +31,14 @@ export default function UserInfo (props: { user: string }) {
 
                 <List>
                     <div>
-                        <li>Followers: {userData.followers}</li>
-                        <li>Repositories: {userData.public_repos}</li>
-                        <li>Total start earned: {userData.stargazers}</li>
+                        <FaUserAlt/><li>Followers: {userData.followers}</li>
+                        <GoRepo/><li>Repositories: {userData.public_repos}</li>
+                        <FaStar/><li>Total start earned: {userData.stargazers}</li>
                     </div>
 
                     <div>
-                        <li>Total issues: {userData.issues}</li>
-                        <li>Total commits: {userData.commits}</li>
+                        <FaInfoCircle/><li>Total issues: {userData.issues}</li>
+                        <GoGitCommit/><li>Total commits: {userData.commits}</li>
                         <li>:)</li>
                     </div>
                 </List>
